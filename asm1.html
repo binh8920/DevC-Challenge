@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <div class="container">
+        <h1>
+          Guessing Game Online
+        </h1>
+        <div id="message"></div>
+        <input type="number" id="number">
+        <button id="guessButton">Guess</button>
+        <div id="result"></div>
+      </div>
+<script>
+    let button = document.getElementById('guessButton');
+    let div = document.getElementById('message');
+    var numToGuess = Math.floor(Math.random()*10);
+
+    button.addEventListener('click', function() {
+
+    let userGuess = document.getElementById('number').value;
+    let guesses = document.getElementById("result");
+	if (numToGuess == userGuess) {
+  	    div.innerHTML = "Congratulations!! You guessed correctly.";
+        div.style.background = "green";
+        guesses.innerHTML = "Your last guess is: " + userGuess;
+    }
+    else if (numToGuess < userGuess) {
+  	    div.innerHTML = "Sorry your guess is too low";
+        div.style.background = "red";
+        guesses.innerHTML = "Your last guess is: " + userGuess;
+    }
+    else {
+  	    div.innerHTML = "Sorry your guess is too high";
+        div.style.background = "red";
+        guesses.innerHTML = "Your last guess is: " + userGuess;
+    }
+});
+</script>      
+</body>
+</html>
