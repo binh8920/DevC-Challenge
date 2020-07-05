@@ -32,7 +32,7 @@
         div.style.background = "green";
         guesses.innerHTML = "Your last guess is: " + userGuess;
     }
-    else if (numToGuess < userGuess) {
+    else if (numToGuess > userGuess) {
   	    div.innerHTML = "Sorry your guess is too low";
         div.style.background = "red";
         guesses.innerHTML = "Your last guess is: " + userGuess;
